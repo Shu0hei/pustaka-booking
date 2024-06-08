@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <?= $this->session->flashdata('pesan'); ?>
   <div class="row">
-    <div class="col-lg-3">
+    <div class="col-lg-12">
       <?php if(validation_errors()){?>
         <div class="alert alert-danger" role="alert">
           <?= validation_errors();?>
@@ -15,7 +15,7 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">No.</th>
             <th scope="col">Kategori</th>
             <th scope="col">Pilihan</th>
           </tr>
@@ -27,11 +27,11 @@
           foreach ($kategori as $k) { ?>
           <tr>
             <th scope="row"><?= $a++; ?></th>
-            <td><?= $k['kategori']; ?></td>
+            <td><?= $k['nama_kategori']; ?></td>
             <td>
-              <a href="<?= base_url('buku/ubahBuku/').$k['id'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
-              <a href="<?= base_url('buku/hapusbuku/').$k['id'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.
-              $k['kategori'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i>Hapus</a>
+              <a href="<?= base_url('buku/ubahBuku/').$k['id_kategori'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
+              <a href="<?= base_url('buku/hapusbuku/').$k['id_kategori'];?>" onclick="return confirm('Kamu yakin akan menghapus <?= $judul.' '.
+              $k['nama_kategori'];?> ?');" class="badge badge-danger"><i class="fas fa-trash"></i>Hapus</a>
             </td>
           </tr>
           <?php } ?>

@@ -1,5 +1,5 @@
 <?php
-class buku extends CI_Controller {
+class Buku extends CI_Controller {
   public function kategori() {
     $data['judul'] = 'Kategori Buku';
     $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
